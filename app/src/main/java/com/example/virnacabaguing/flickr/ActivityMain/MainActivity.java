@@ -1,6 +1,7 @@
 package com.example.virnacabaguing.flickr.ActivityMain;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -19,13 +20,13 @@ import java.util.ArrayList;
 
 
 import com.example.virnacabaguing.flickr.ActivityDisplay.DisplayImageInfo;
+import com.example.virnacabaguing.flickr.ActivityDisplay.ImageInfo;
 import com.example.virnacabaguing.flickr.ActivityMain.FlickrSearchManager.GetThumbnailsThread;
 import com.example.virnacabaguing.flickr.R;
 
 public class MainActivity extends AppCompatActivity {
 
     private GridView gridView;
-
     public UIHandlerMainActivity uihandler;
     public GridImageAdapter imgAdapter;
     private ArrayList<ImageItem> imageList;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 searchImageInfo(position);
             }
         });
+
     }
 
     OnClickListener onSearchButtonClicked = new OnClickListener() {

@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,6 +36,7 @@ public class DisplayImageInfo extends AppCompatActivity {
         photoId = intent.getExtras().getString("photosetId");
 
         new Thread(searchImageInfo).start();
+
     }
 
     Runnable searchImageInfo = new Runnable() {
@@ -58,35 +60,32 @@ public class DisplayImageInfo extends AppCompatActivity {
         txtDescription.setText("Descriptions : "  + imageInfo.getDescription());
     }
 
-    private void displayImage(String str) {
-
-        imageDisplay = (ImageView) findViewById(R.id.imageDisplay);
-
-//        URL newurl = new URL(str);
-//        Bitmap mIcon_val = BitmapFactory.decodeStream(newurl.openConnection() .getInputStream());
-//        imageDisplay.setImageBitmap(mIcon_val);
-    }
 
     class UIHandlerDisplayActivity extends Handler {
         public static final int ID_SHOW_IMAGE = 1;
+        public static final int ID_SHOW_INFO = 2;
 
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case ID_SHOW_IMAGE:
+                    if (msg.obj != null) {
+                        imageDisplay = (ImageView) findViewById(R.id.test_image);
+                        imageDisplay.setImageBitmap((Bitmap) msg.obj);
+                        imageDisplay.setVisibility(View.VISIBLE);
+                    }
+                    break;
+                case ID_SHOW_INFO:
                     imageInfo = (ImageInfo) msg.obj;
                     setContentView(R.layout.activity_display_image_info);
-                    displayImage(imageInfo.getUrl());
-
                     displayImageInfo(imageInfo);
+
                     break;
-//                case ID_UPDATE_ADAPTER:
-                    // Update adapter with thumnails
-//                    imgAdapter.notifyDataSetChanged();
-//                    break;
             }
             super.handleMessage(msg);
         }
     }
+
+
 
 }

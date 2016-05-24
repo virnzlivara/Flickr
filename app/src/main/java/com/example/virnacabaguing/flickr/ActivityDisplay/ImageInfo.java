@@ -1,7 +1,8 @@
 package com.example.virnacabaguing.flickr.ActivityDisplay;
 
+import com.example.virnacabaguing.flickr.ActivityDisplay.DisplayImageInfo;
+import android.graphics.Bitmap;
 
-import com.example.virnacabaguing.flickr.ActivityMain.FlickrSearchManager;
 
 /**
  * Created by virnacabaguing on 5/23/16.
@@ -12,6 +13,10 @@ public class ImageInfo {
     private String description;
     private String date; //// TODO: 5/23/16 changed this to date
     private String url;
+    private String thumbURL;
+    private Bitmap thumb;
+    Bitmap photo;
+
 
     public ImageInfo(){
         super();
@@ -24,6 +29,12 @@ public class ImageInfo {
         this.description = description;
         this.date = date;
         this.url = url;
+        setThumbURL(url);
+
+    }
+
+    private static String createLargePhotoURL(String id, String owner, String secret, String server, String farm) {
+        return "http://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg";
 
     }
 
@@ -67,6 +78,31 @@ public class ImageInfo {
         this.url = url;
     }
 
+    public Bitmap getThumb() {
+        return thumb;
+    }
 
+    public Bitmap getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Bitmap photo) {
+        this.photo = photo;
+    }
+
+
+
+    public void setThumbURL(String thumbURL) {
+        this.thumbURL = thumbURL;
+        onSaveThumbURL(FlickrGetInfoManager.uihandler, this);
+    }
+    public void onSaveThumbURL(DisplayImageInfo.UIHandlerDisplayActivity uih, ImageInfo imgInfo) {
+        // TODO Auto-generated method stub
+        new FlickrGetInfoManager.GetThumbnailsThread(imgInfo, uih).start();
+    }
+
+    public String getThumbURL() {
+        return thumbURL;
+    }
 
 }

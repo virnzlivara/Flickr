@@ -11,53 +11,46 @@
 
     <ImageView
         android:id="@+id/test_image"
-        android:src="@drawable/sample_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Owner: "
+        android:id="@+id/txtOwner"
+        android:layout_below="@+id/test_image"
+        android:layout_alignParentStart="true" />
 
-    <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-        <!-- Here you put the rest of your current view-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Owner: "
-            android:id="@+id/txtOwner"
-            android:layout_below="@+id/imageDisplay"
-            android:layout_alignParentStart="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Date Taken"
+        android:id="@+id/txtTaken"
+        android:layout_below="@+id/txtOwner"
+        android:layout_alignParentStart="true" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Date Taken"
-            android:id="@+id/txtTaken"
-            android:layout_below="@+id/txtOwner"
-            android:layout_alignParentStart="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/txtTitle"
+        android:layout_below="@+id/txtTaken"
+        android:layout_alignParentStart="true"
+        android:text="Title" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/txtTitle"
-            android:layout_below="@+id/txtTaken"
-            android:layout_alignParentStart="true"
-            android:text="Title" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Description : "
+        android:id="@+id/txtDescription"
+        android:layout_below="@+id/txtTitle"
+        android:layout_alignParentStart="true" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Description : "
-            android:id="@+id/txtDescription"
-            android:layout_below="@+id/txtTitle"
-            android:layout_alignParentStart="true" />
-    </ScrollView>
 
 
 

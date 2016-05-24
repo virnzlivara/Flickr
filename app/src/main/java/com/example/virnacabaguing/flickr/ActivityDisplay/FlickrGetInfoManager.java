@@ -1,13 +1,21 @@
 package com.example.virnacabaguing.flickr.ActivityDisplay;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Message;
+import android.util.Log;
+
 import com.example.virnacabaguing.flickr.ActivityDisplay.DisplayImageInfo.UIHandlerDisplayActivity;
 import com.example.virnacabaguing.flickr.URLConnector;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 
 
 /**
@@ -60,7 +68,7 @@ public class FlickrGetInfoManager {
                 String photoURL = createLargePhotoURL(photo.getString("id"), photo.getString("owner"), photo.getString("secret"), photo.getString("server"), photo.getString("farm"));
 
                 imageInfo = new ImageInfo(photoURL, owner.getString("username"), title.getString("_content"), description.getString("_content"), date.getString("taken"));
-                Message msg = Message.obtain(uih, UIHandlerDisplayActivity.ID_SHOW_IMAGE);
+                Message msg = Message.obtain(uih, UIHandlerDisplayActivity.ID_SHOW_INFO);
                 msg.obj = imageInfo;
                 uih.sendMessage(msg);
             } catch (JSONException e) {
@@ -79,8 +87,45 @@ public class FlickrGetInfoManager {
 
     }
 
+    public static Bitmap getImage(ImageInfo imgInfo) {
+        Bitmap bm = null;
+        try {
+            URL aURL = new URL(imgInfo.getUrl());
+            URLConnection conn = aURL.openConnection();
+            conn.connect();
+            InputStream is = conn.getInputStream();
+            BufferedInputStream bis = new BufferedInputStream(is);
+            bm = BitmapFactory.decodeStream(bis);
+            bis.close();
+            is.close();
+        } catch (Exception e) {
+            Log.e("FlickrManager", e.getMessage());
+        }
+        return bm;
+    }
 
+    public static class GetThumbnailsThread extends Thread {
+        ImageInfo imgInfo;
+        UIHandlerDisplayActivity uih;
 
+        public GetThumbnailsThread(ImageInfo imgInfo, UIHandlerDisplayActivity uih) {
+            this.imgInfo = imgInfo;
+            this.uih = uih;
+        }
 
+        @Override
+        public void run() {
+            // TODO Auto-generated method stub
+            if (imgInfo.getPhoto() == null) {
+                imgInfo.setPhoto(FlickrGetInfoManager.getImage(imgInfo));
+            }
+            Bitmap bmp = imgInfo.getPhoto();
+            if (imgInfo.getPhoto() != null) {
+                Message msg = Message.obtain(uih, UIHandlerDisplayActivity.ID_SHOW_IMAGE);
+                msg.obj = bmp;
+                uih.sendMessage(msg);
+            }
+        }
 
+    }
 }
