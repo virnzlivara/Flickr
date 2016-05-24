@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/virnacabaguing/Desktop/AndroidApps/Flickr/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/virnacabaguing/Desktop/AndroidApps/Flickr/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_9aaed4bdce4f9dd91d8f0694ba7fce89dd1ac8cf/classes.dex" />
+    </item>
+    <item
+        jar="/Users/virnacabaguing/Desktop/AndroidApps/Flickr/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4921dfd4954ed151262e53e3500935e504bf5538">
+        <dex dex="/Users/virnacabaguing/Desktop/AndroidApps/Flickr/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_19bae5b0533bfd8d3e39f384aa7823dc6d84b273/classes.dex" />
+    </item>
+    <item
+        jar="/Users/virnacabaguing/Desktop/AndroidApps/Flickr/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/virnacabaguing/Desktop/AndroidApps/Flickr/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_96d6a5cdc4dcd720690a20ef6f21fc437b84dedd/classes.dex" />
+    </item>
+    <item
+        jar="/Users/virnacabaguing/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/virnacabaguing/Desktop/AndroidApps/Flickr/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_041bcbc349d6cd7a6a593b30d9aa9f63e28597e9/classes.dex" />
+    </item>
+    <item
+        jar="/Users/virnacabaguing/Desktop/AndroidApps/Flickr/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/virnacabaguing/Desktop/AndroidApps/Flickr/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_66e66fe04547674ce9d93c1b00341a28339ae81d/classes.dex" />
+    </item>
+    <item
+        jar="/Users/virnacabaguing/Desktop/AndroidApps/Flickr/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3934a3b3527e748ced997c60273113bbb73ecf37">
+        <dex dex="/Users/virnacabaguing/Desktop/AndroidApps/Flickr/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_714a3e8e6504d8c55e5f42afbe219b9bed7f6cb7/classes.dex" />
+    </item>
+    <item
+        jar="/Users/virnacabaguing/Desktop/AndroidApps/Flickr/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/virnacabaguing/Desktop/AndroidApps/Flickr/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_4d4b6614766f9185ebc90bd9f2b72119514fe923/classes.dex" />
+    </item>
+    <item
+        jar="/Users/virnacabaguing/Desktop/AndroidApps/Flickr/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/virnacabaguing/Desktop/AndroidApps/Flickr/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_967cccbb5a9f96b14a770ecb3dc1a302cf5ca665/classes.dex" />
+    </item>
+
+</items>

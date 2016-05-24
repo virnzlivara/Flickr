@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Flickr</string>
+    <string name="search_text">Enter keyword here</string>
+    <string name="button_search">Search</string>
+</resources>
